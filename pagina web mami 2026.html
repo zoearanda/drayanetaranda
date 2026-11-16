@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dra. Yanet Aranda | Ginecología y Obstetricia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+      {
+      margin:0;padding:0;box-sizing:border-box}
+    {
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top:80px; /* evita que el header tape las secciones */
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      color:#4E5D73;
+      background:#FFFFFF;
+      line-height:1.7;
+    }
+
+    :root{
+      --primary:#BA4764;
+      --primary-dark:#9a6f67;
+      --beige:#f7f1ee;
+      --text:#444;
+      --white:#fff;
+    }
+
+    header{
+      position:fixed;
+      top:0;
+      width:100%;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid #eee;
+      z-index:1000;
+    }
+
+    
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    /* ===== ESPACIADO GENERAL ===== */
+    section{
+      padding:100px 0;
+    }
+
+    /* Todas las secciones con ancla */
+    #inicio,
+    #sobre,
+    #servicios,
+    #galeria,
+    #testimonios,
+    #preguntas,
+    #ubicacion,
+    #contacto{
+      scroll-margin-top:80px;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:2.5rem;
+      color:#1F2A37;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#6B7280;
+      max-width:700px;
+      margin:auto;
+    }
+
+    .logo{
+    height: 70px;      
+    width: auto;       
+    object-fit: contain;
+    }
+
+    nav ul{
+      display:flex;
+    }
+
+    .logo-texto{
+    font-size:1.3rem;
+    font-weight:600;
+    color:#BA4764;
+    margin-right:auto;
+    margin-left:15px;
+    }
+
+    .menu{
+        display:flex;
+        list-style:none;
+        gap:28px;
+        margin:0;
+        padding:0;
+    }
+
+    .menu li{
+        list-style:none;
+    }
+
+    .menu a{
+        text-decoration:none;
+        color:#555;
+        font-weight:500;
+    }
+
+    .menu a:hover{
+        color:#BA4764;
+    }
+
+    nav a:hover{color:var(--primary)}
+
+    .hero{
+      min-height:100vh;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:70px;
+      padding:140px 8% 100px;
+      background:linear-gradient(to right,#fff 55%,#F8E7EC 45%);
+    }
+
+    .hero-content{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .hero h1{
+      font-family:'Playfair Display',serif;
+      font-size:3.8rem;
+      line-height:1.15;
+      color:#111827;
+      margin-bottom:24px;
+
+      /* ELIMINA LOS TOP Y LEFT */
+      position:static;
+    }
+
+    .hero p{
+      font-size:1.1rem;
+      color:#4B5563;
+      max-width:560px;
+      margin-bottom:32px;
+
+      /* ELIMINA LOS TOP Y LEFT */
+      position:static;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:fit-content;
+      background:var(--primary);
+      color:#fff;
+      padding:14px 28px;
+      border-radius:40px;
+      text-decoration:none;
+      font-weight:600;
+      transition:all .3s ease;
+
+      /* ELIMINA LOS TOP Y LEFT */
+      position:static;
+    }
+
+    .btn:hover{
+      background:#A63D58;
+      transform:translateY(-2px);
+    }
+
+    .hero-image{
+      display:flex;
+      justify-content:center;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:480px;
+      border-radius:24px;
+      object-fit:cover;
+      box-shadow:0 20px 40px rgba(0,0,0,.12);
+    }
+
+    .sobre{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      align-items:center;
+      gap:80px;
+      width:90%;
+      max-width:1200px;
+      margin:0 auto;
+      padding:100px 0;
+    }
+
+    .sobre-texto h2{
+      font-size:2.4rem;
+      color:#111827;
+      margin-bottom:20px;
+    }
+
+    .sobre-texto p{
+      color:#4B5563;
+      margin-bottom:18px;
+    }
+
+    .sobre-imagen{
+      display:flex;
+      justify-content:center;
+    }
+
+    .sobre-imagen img{
+      width:100%;
+      max-width:340px;
+      height:420px;
+      object-fit:cover;
+      border-radius:24px;
+      box-shadow:0 20px 40px rgba(0,0,0,.12);
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:32px;
+      margin-top:50px;
+    }
+
+    .service-card{
+      background:#fff;
+      padding:40px 32px;
+      border-radius:24px;
+      text-align:center;
+      transition:all .3s ease;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+      border:1px solid #F3F4F6;
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 20px 40px rgba(0,0,0,.10);
+    }
+
+    .service-card h4{
+      margin:18px 0 10px;
+      color:#333;
+    }
+
+    .icon{
+      width:70px;
+      height:70px;
+      margin:auto;
+      border-radius:50%;
+      background:#f3e3df;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.8rem;
+      color:var(--primary);
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+    }
+
+    .gallery-grid img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      border-radius:18px;
+    }
+
+    .carrusel{
+      width:90%;
+      max-width:1100px;
+      margin:100px auto;
+      position:relative;
+    }
+
+    .slider{
+      width:100%;
+      height:500px;
+      overflow:hidden;
+      border-radius:28px;
+      position:relative;
+      box-shadow:0 20px 40px rgba(0,0,0,.15);
+    }
+
+    .slide{ 
+      position: absolute; 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; opacity: 0; 
+      transition: opacity 0.8s ease; 
+    } 
+
+    .slide.active{ 
+      opacity: 1;
+    }
+
+    .testimonials{
+      background:#FAF7F5;
+      padding:110px 0;
+    }
+
+    .testimonials-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:32px;
+      margin-top:50px;
+    }
+
+    .testimonial{
+      background:#fff;
+      padding:40px;
+      border-radius:24px;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+    }
+
+    .testimonial strong{
+      display:block;
+      margin-top:16px;
+      color:var(--primary);
+    }
+
+    .faq-item{
+      border-bottom:1px solid #eee;
+      padding:22px 0;
+    }
+
+    .faq-item h4{
+      color:#333;
+      margin-bottom:8px;
+    }
+
+    .cta{
+      max-width:1200px;
+      margin:120px auto;
+      background:linear-gradient(135deg,#BA4764,#D98A9E);
+      color:#fff;
+      text-align:center;
+      border-radius:32px;
+      padding:80px 40px;
+    }
+
+    .cta h2{
+      font-family:"Playfair Display",serif;
+      font-size:2.6rem;
+      margin-bottom:14px;
+    }
+
+    .cta .btn{
+      background:#fff;
+      color:var(--primary);
+      margin-top:20px;
+    }
+
+    footer{
+      background:#222;
+      color:#ddd;
+      padding:60px 0 30px;
+      margin-top:80px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:30px;
+      margin-bottom:30px;
+    }
+
+    footer h4{
+      margin-bottom:15px;
+      color:#fff;
+    }
+
+    footer p, footer a{
+      color:#ccc;
+      text-decoration:none;
+    }
+
+    .copyright{
+      border-top:1px solid #444;
+      padding-top:20px;
+      text-align:center;
+      color:#aaa;
+      font-size:.9rem;
+    }
+
+    .whatsapp{
+      position:fixed;
+      bottom:22px;
+      right:22px;
+      width:60px;
+      height:60px;
+      background:#25D366;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:1.6rem;
+      text-decoration:none;
+      box-shadow:0 8px 20px rgba(0,0,0,.2);
+    }
+
+    .hero{
+        background:#fff;
+    }
+
+    .hero p{
+      margin:auto auto 30px;
+    }
+
+    nav ul{
+      display:none;
+    }
+
+    .hero h1{
+      font-size:2.8rem;
+    }
+  }
+
+    .ubicacion{
+      padding:110px 10%;
+      background:#fff;
+      text-align:center;
+    }
+
+    .ubicacion h2{
+        color:#c87b8f;
+        margin-bottom:15px;
+    }
+
+    .mapa{
+        margin-top:30px;
+        border-radius:20px;
+        overflow:hidden;
+        box-shadow:0 10px 30px rgba(0,0,0,.15);
+    }
+
+    .mapa iframe{
+        width:100%;
+        height:450px;
+        border:none;
+    }
+
+    .sobre-imagen{
+
+        height:400px;
+
+    }
+
+    @media (max-width:900px){
+
+    nav ul{
+      display:none;
+    }
+
+    .hero{
+      grid-template-columns:1fr;
+      text-align:center;
+      padding:120px 6% 80px;
+      background:#fff;
+    }
+
+    .hero-content{
+      align-items:center;
+    }
+
+    .hero h1{
+      font-size:2.6rem;
+    }
+
+    .hero p{
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .sobre{
+      grid-template-columns:1fr;
+      text-align:center;
+      gap:40px;
+      padding:80px 0;
+    }
+
+    .slider{
+      height:320px;
+    }
+
+    .section-title h2{
+      font-size:2rem;
+    }
+
+    section{
+      padding:80px 0;
+    }
+  }
+
+}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <img src="logo.jpg" alt="Logo" class="logo">
+
+      <div class="logo-texto">
+          Dra. Yanet Aranda
+      </div>
+
+      <ul class="menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre">Sobre mí</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#ubicacion">Ubicación</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+      </ul>
+  </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+    <div class="texto">
+      <h1>Ginecología y Obstetricia con atención cálida y profesional</h1>
+      <p>
+        Acompañamos a la mujer en cada etapa de su vida, ofreciendo diagnóstico,
+        prevención y tratamiento con tecnología moderna y un enfoque humano.
+      </p>
+      <a class="btn" href="https://wa.me/529618497011" target="_blank">Agendar cita</a>
+    </div>
+
+    <div class="hero-image">
+      <AsyncImage query="Doctora ginecóloga latina sonriendo en consultorio moderno, bata blanca, estilo editorial profesional" 
+      aspectRatio="4:5" maxWidth={480} maxHeight={600}/><img src="revisionbebe.jpg" alt="Revisión de embarazo"> 
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="sobre">
+  <div class="sobre-texto">
+    
+      <h3>Sobre la doctora</h3>
+      <p>
+        La Dra. Yanet Aranda es especialista en Ginecología y Obstetricia con más de 20 años de experiencia en salud femenina. Su práctica se centra en la atención integral, la prevención y el acompañamiento personalizado. Ofrece cita en su consultorio médico privado.
+      </p>
+      <br>
+      <h3>Trayectoria Académica </h3>
+      <br>
+      <p>Se formó como Médico Cirujano en la Universidad Autónoma de Guadalajara (UAG) y después realizó la Especialidad en Ginecología y Obstetricia avalada por la Universidad Nacional Autónoma de México (UNAM). Es médico certificado por el Colegio Mexicano de Ginecología y Obstetricia desde el año 2007. Cuenta con múltiples diplomados en áreas como laparoscopia, colposcopia, detección de enfermedades de mama, laser (rejuvenecimiento vaginal, eliminación de estrías, entre otras). 
+      </p>
+    </div>
+   <div class="sobre-imagen">
+        <img src="posa.jpg" alt="Dra. Yanet Aranda">
+    </div>
+</section>
+
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-title">
+      <h2>Servicios</h2>
+      <p>Atención integral para el bienestar y la salud de la mujer.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon">🩺</div>
+        <h4>Consulta ginecológica </h4>
+        <p>Valoración completa, chequeo anual y prevención de enfermedades de la mujer.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">👶</div>
+        <h4>Consulta Obstétrica</h4>
+        <p>Control de embarazo y prevención de enfermedades durante el mismo.</p>
+      </div>
+
+
+      <div class="service-card">
+        <div class="icon">🖥️</div>
+        <h4>Ultrasonido</h4>
+        <p>Seguimiento del embarazo con ultrasonido y atención especializada. Detección de quistes y miomas.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🌸</div>
+        <h4>Colposcopia</h4>
+        <p> Visualización del cervix para el diagnóstico oportuno de lesiones premalignas.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🔬</div>
+        <h4>Papanicolaou</h4>
+        <p>Detección oportuna de células cervicales malignas. </p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🏥</div>
+        <h4>Biopsia</h4>
+        <p>Biopsia de mama, biopsia de endometrio y biposia cervical.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🩹</div>
+        <h4>Cono Cervical</h4>
+        <p>Extracción de un tejido cervical probablemente maligno.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">💉</div>
+        <h4>Implante Subdermico</h4>
+        <p> Método anticonceptivo subdérmico.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🩺</div>
+        <h4>Retiro de Implante</h4>
+        <p> Extracción del método anticonceptivo.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🇹</div>
+        <h4>Colocación de DIU</h4>
+        <p>Aplicación vaginal de dispositivo intrauterino.</p>
+        <p>Plata o Cobre</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">👩‍⚕️</div>
+        <h4>Retiro DIU</h4>
+        <p>Extracción vaginal de dispositivo intrauterino.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🏥</div>
+        <h4>DIU Traslocado</h4>
+        <p>Cuando no es posible visualizar los hilos para la extracción del DIU, requiere maniobras especiales. </p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">💉</div>
+        <h4>Vacuna Gardasil (VPH)</h4>
+        <p>Se recomiendan 3 dosis de la vacuna para la prevención del VPH.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🇹</div>
+        <h4>DIU de plata</h4>
+        <p>Aplicación vaginal de dispositivo intrauterino (No Hormonal).</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🇹</div>
+        <h4>Mirena</h4>
+        <p>Aplicación vaginal de dispositivo intrauterino con hormona.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🖊️</div>
+        <h4>Electrofulguración</h4>
+        <p>Destrucción con calor del tejido maligno. </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="container">
+    <div class="section-title">
+      <h2>Galería</h2>
+      <p>Espacios diseñados para brindar comodidad, privacidad y confianza.</p>
+    </div>
+    <div class="carrusel">
+
+    <button class="prev">&#10094;</button>
+
+    <div class="slider">
+
+        <img src="cirugia.jpg" class="slide active">
+        <img src="sonrie.jpg" class="slide">
+        <img src="con.jpg" class="slide">
+        <img src="bata.jpg" class="slide">
+        <img src="bebe.jpg" class="slide">
+        <img src="colpo.jpg" class="slide">
+
+
+        </div>
+
+        <button class="next">&#10095;</button>
+
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <div class="section-title">
+      <h2>Testimonios</h2>
+      <p>La confianza de nuestras pacientes es nuestra mejor recomendación.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p>"La doctora brinda una atención muy profesional, amable y hace que te sientas en confianza desde la primera consulta y el resultado del tratamiento me ha ayudado"</p>
+        <strong>Grendy M.</strong>
+      </div>
+
+      <div class="testimonial">
+        <p>"Me gustó mucho la consulta, te explica todo de manera detallada y su trato es muy humano."</p>
+        <strong> A.G.</strong>
+      </div>
+
+      <div class="testimonial">
+        <p>"Excelente, muy amable, desde un inicio me escuchó y explicó claramente mi diagnóstico resolviendo todas mis dudas"</p>
+        <strong>Jennifer S.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta">
+      <h2>Tu salud merece atención especializada</h2>
+      <p>Agenda una consulta y recibe una valoración integral en un ambiente seguro y confidencial.</p>
+      <a class="btn" href="https://wa.me/529618497011" target="_blank">Enviar WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contacto">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Dra. Yanet Aranda</h4>
+        <p> Médico GinecoObstetra</p>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <p>📞 +52 961 121 2026</p>
+        <p>📲 +52 961 849 7011</p>
+        <p>✉️ consultorioginecologico22@hotmail.com</p>
+      </div>
+
+      <div>
+        <h4>Dirección</h4>
+        <p>Costa Rica 374, El Retiro. Tuxtla Gutiérrez, Chiapas, México</p>
+      </div>
+
+      <div>
+        <h4>Horario</h4>
+        <p>Lunes a Viernes</p>
+        <p>10:00 AM -1:00 PM </p>
+        <p>5:00 PM - 7:00 PM</p>
+        <p>Sábado</p>
+        <p>10:00 AM – 1:00 PM</p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © 2026 Dra. Yanet Aranda · Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/529618497011" target="_blank">💬</a>
+<section id="ubicacion" class="ubicacion">
+    <div class="contenedor">
+
+        <h2>Ubicación</h2>
+
+        <p>
+            Visítanos en nuestro consultorio.
+        </p>
+
+        <div class="mapa">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.5378812163763!2d-93.08569482518219!3d16.749894220857556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ecd9175890fb8d%3A0x60b84ce583507a4!2sDra.%20Yanet%20I%20Aranda%20Gonz%C3%A1lez!5e0!3m2!1ses-419!2smx!4v1784665111353!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </iframe>
+
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
